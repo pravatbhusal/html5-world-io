@@ -26,7 +26,7 @@ class Serv:
 
     # initiate and return the socketio handler
     def initiate_socketio(self, app):
-        socketio = SocketIO(app)
+        socketio = SocketIO(app, ping_timeout=2, ping_interval=0.5)
         return socketio
 
     # run the socket server

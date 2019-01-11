@@ -1,6 +1,5 @@
 # socket events
-from src.server.world.python.connection.connection import handle_connections
-from src.server.world.python.chat.chat import handle_chat
+from src.server.world.rooms import initiate_rooms
 
 # third parties
 from flask import Flask
@@ -36,8 +35,7 @@ class Serv:
 
 # socket events
 def socket_events(socketio):
-    handle_connections(socketio)
-    handle_chat(socketio)
+    initiate_rooms(socketio)
 
 
 # start the service

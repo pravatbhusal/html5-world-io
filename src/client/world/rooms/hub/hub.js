@@ -63,12 +63,12 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 
 
 // stage content:
-(lib.worldclient = function(mode,startPosition,loop) {
+(lib.hub = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
 	// timeline functions:
 	this.frame_0 = function() {
-		socket = io.connect("localhost:5000");
+		socket = io.connect("localhost:5000/rooms/hub");
 		
 		// listen for the start session emit from the server
 		socket.on("start_session", function (data, clients) {

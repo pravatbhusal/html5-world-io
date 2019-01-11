@@ -1,0 +1,6 @@
+{
+  "host": "localhost",
+  "port": 5000,
+  "debug": true,
+  "secret_key": "s0Qi0mweln"
+}

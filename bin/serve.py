@@ -4,13 +4,14 @@ from src.server.world.rooms import initiate_rooms
 # third parties
 from flask import Flask
 from flask_socketio import SocketIO
+import json
 
 
 # service class
 class Serv:
 
     # serve constructor
-    def __init__(self, host='localhost', port='5000', debug=True, secret_key='s0Qi0mweln'):
+    def __init__(self, host, port, debug, secret_key):
         self.host = host
         self.port = port
         self.debug = debug
@@ -40,13 +41,18 @@ def socket_events(socketio):
 
 # start the service
 if __name__ == "__main__":
-    # initiate the server
-    server = Serv()
-    app = server.initiate_app()
-    socketio = server.initiate_socketio(app)
+    # load serve configuration file
+    with open('../etc/serve.json') as serve_configs:
+        config = json.load(serve_configs)
 
-    # handle socket events
-    socket_events(socketio)
+        # initiate the server
+        server = Serv(host=config["host"], port=config["port"],
+                      debug=config["debug"], secret_key=config["secret_key"])
+        app = server.initiate_app()
+        socketio = server.initiate_socketio(app)
 
-    # run the server
-    server.run_server(app, socketio)
+        # handle socket events
+        socket_events(socketio)
+
+        # run the server
+        server.run_server(app, socketio)

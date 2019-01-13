@@ -1,5 +1,5 @@
 # HTML5 World IO
-An experimental HTML5 online multiplayer game I was planning on creating. Due to time constraints and college, I wasn't able to achieve what my original goals were with the project. Therefore, I've decided to open-source the programming and source files for anybody to hack on and improve.
+An experimental HTML5 online multiplayer game I was planning on creating. Due to time constraints and college, I wasn't able to achieve what my original goals were with the project. Therefore, I've decided to open-source the source files for anybody to hack-on and improve.
 
 # Dependencies
 `cd` into the bin folder and execute `pip install -R requirements.txt`

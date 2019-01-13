@@ -1,3 +1,7 @@
+import sys
+
+sys.path.append('../')
+
 # socket events
 from src.server.world.rooms import initiate_rooms
 

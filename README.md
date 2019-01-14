@@ -7,7 +7,7 @@ An experimental HTML5 online multiplayer game I was planning on creating. Due to
 # Configuration
 In the `etc` folder, the `serve.json` file contains the configurations to the SocketIO server. Modify it to your liking.  
 
-In the hub.js file inside the `src/client/world/rooms/hub` folder, change the value of the `socket` variable to your host and port. Note that whenever creating new rooms using the `hub.fla` template, you'll need to modify the `socket` variable everytime to match the configuration from `serve.json`.
+In the `hub.js` file inside the `src/client/world/rooms/hub` folder, change the value of the `socket` variable to your host and port. Note that whenever creating new rooms or updating the hub using the `hub.fla` as a template, you'll need to modify the `socket` variable everytime to match the configuration from `serve.json`.
 
 # Running The Server
 Inside the bin folder, there's a file named `serve.py`. Use `python serve.py` to run it and successfully start the SocketIO server.  
